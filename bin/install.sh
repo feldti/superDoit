@@ -10,7 +10,7 @@ if [ "$gemstoneversion"x = "x" ]; then
 else
 	case "$gemstoneversion" in
 		3.7.0|3.7.1)
-			"we're good"
+			# we're good
 			;;
 		*)
 			echo "only gemstone version 3.7.1 or 3.7.2 should be used"
