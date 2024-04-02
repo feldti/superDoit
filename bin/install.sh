@@ -4,9 +4,17 @@ set -e
 
 # Unconditionally download 3.7.0 along and ignor requested GemStone version.
 #
-gemstoneversion="3.7.0"
+gemstoneversion="$1"
 if [ "$gemstoneversion"x = "x" ]; then
-	exit 0
+	gemstoneversion="3.7.0"
+else
+	case "$gemstoneversion" in
+		3.7.0|3.7.1)
+			"we're good"
+			;;
+		*)
+			echo "only gemstone version 3.7.1 or 3.7.2 should be used"
+			exit 1
 fi
 PLATFORM="`uname -sm | tr ' ' '-'`"
 case "$PLATFORM" in
