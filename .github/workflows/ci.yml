@@ -43,7 +43,7 @@ jobs:
           PATH=${GITHUB_WORKSPACE}/examples/simple:$PATH
           
           # test that install.sh script can be run a second time without error (noop)
-          ${GITHUB_WORKSPACE}/bin/install.sh
+          ${GITHUB_WORKSPACE}/bin/install.sh $GS_VERS
 
           # list running stones
           gslist -lc
