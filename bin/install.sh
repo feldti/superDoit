@@ -15,6 +15,7 @@ else
 		*)
 			echo "only gemstone version 3.7.1 or 3.7.2 should be used"
 			exit 1
+	esac
 fi
 PLATFORM="`uname -sm | tr ' ' '-'`"
 case "$PLATFORM" in
