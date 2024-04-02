@@ -66,17 +66,20 @@ if [ ! -d "${dlname}" ]; then
 		esac
 	fi
 	
-	if [ "$gemstoneversion" = "3.7.0" ]; then
-		cd ../solo
-		echo "Making symbolic link in `pwd` for $dlname" 
-		ln -s ../products/${dlname} product
-		
-		echo "Copying extent0.rowan.dbf and extent0.solo.dbf"
-		cp ../products/${dlname}/bin/extent0.rowan.dbf extent0.solo.dbf
-		chmod -w extent0.solo.dbf
-		echo "Copying extent0.dbf to extent0.dbf"
-		cp ../products/${dlname}/bin/extent0.dbf extent0.dbf
-		chmod -w extent0.dbf
+	cd ../solo
+	echo "Making symbolic link in `pwd` for $dlname" 
+	ln -s ../products/${dlname} product
+	
+	echo "Copying extent0.rowan.dbf and extent0.solo.dbf"
+	cp ../products/${dlname}/bin/extent0.rowan.dbf extent0.solo.dbf
+	chmod -w extent0.solo.dbf
+	echo "Copying extent0.dbf to extent0.dbf"
+	cp ../products/${dlname}/bin/extent0.dbf extent0.dbf
+	chmod -w extent0.dbf
+	if [ "$gemstoneversion" = "3.7.1" ]; then
+		echo "Copying extent0.rowan3.dbf"
+		cp ../products/${dlname}/bin/extent0.rowan3.dbf .
+		chmod -w extent0.rowan3.dbf
 	fi
 else
 	echo "${dlname} has already been installed in `pwd` for $PLATFORM"
