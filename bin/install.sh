@@ -53,7 +53,7 @@ if [ ! -d "${dlname}" ]; then
 	fi
 	if [ "$needsDownload" = "true" ] ; then
 		echo "Downloading ${dlname} to `pwd` for $PLATFORM"
-		curl  -L -O -S "https://ftp.gemtalksystems.com/GemStone64/${gemstoneversion}/${dlname}.${format}"
+		curl  -L -O -S "https://downloads.gemtalksystems.com/GemStone64/${gemstoneversion}/${dlname}.${format}"
 		case "$format" in
 			zip)
 				unzip ${dlname}.zip
