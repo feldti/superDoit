@@ -13,13 +13,17 @@ else
 			# we're good
 			;;
 		*)
-			echo "only gemstone version 3.7.1 or 3.7.2 should be used"
+			echo "only gemstone version 3.7.0, 3.7.1 or 3.7.2 should be used"
 			exit 1
 	esac
 fi
 PLATFORM="`uname -sm | tr ' ' '-'`"
 case "$PLATFORM" in
-   Darwin-arm64)
+   Linux-aarch64)
+		dlname="GemStone64Bit${gemstoneversion}-arm64.Linux"
+		format=zip
+		;;
+   Darwin-arm64 )
 		dlname="GemStone64Bit${gemstoneversion}-arm64.Darwin"
 		format=dmg
 		;;
