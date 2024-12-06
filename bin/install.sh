@@ -6,7 +6,7 @@ set -e
 #
 gemstoneversion="$1"
 if [ "$gemstoneversion"x = "x" ]; then
-	gemstoneversion="3.7.0"
+	gemstoneversion="3.7.1"
 else
 	case "$gemstoneversion" in
 		3.7.0|3.7.1)
